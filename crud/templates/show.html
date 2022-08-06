@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container mt-3">
+
+<h4>Data Pegawai</h4>
+<a href="{% url 'add' %}" class="btn btn-primary">Tambah Data</a>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nama Pegawai</th>
+            <th>NIP</th>
+            <th>Alamat</th>
+            <th>Devisi</th>
+            <th>Jenkel</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s in pegawaiudb  %}
+
+        <tr>
+            <td>{{ s.sid }}</td>
+            <td>{{ s.snama }}</td>
+            <td>{{ s.snip }}</td>
+            <td>{{ s.salamat }}</td>
+            <td>{{ s.sdivisi }}</td>
+            <td>{{ s.sjenkel }}</td>
+            <td>
+
+                <a href="update/{{ s.id }}" class="btn btn-sm btn-warning" >EDIT</a>
+                <a href="delete/{{ s.id }}" class="btn btn-sm btn-danger" >DELETE</a>
+
+            </td>
+        </tr>
+
+
+        {% endfor %}
+    </tbody>
+</table>
+
+   
+</div>
+{% endblock content %}

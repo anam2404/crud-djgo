@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container mt-3">
+
+<h4>Tambah Pegawai</h4>
+<hr>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="">ID</label>
+        <input type="text" name="sid" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Nama Pegawai</label>
+        <input type="text" name="snama" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">NIP</label>
+        <input type="text" name="snip" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Devisi</label>
+        <input type="text" name="sdivisi" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Alamat</label>
+        <input type="text" name="salamat" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Jenkel</label>
+        <select name="sjenkel" class="form-control" id="">
+            <option>Laki-Laki</option>
+            <option>Perempuan</option>
+        </select>
+    </div>
+    <div class="form-group" style="margin-top: 10px;">
+        <button class="btn btn-primary" type="submit">Simpan</button>
+        <a href="{% url 'show' %}" class="btn btn-info">Tampilkan Data</a>
+    </div>
+</form>
+   
+</div>
+{% endblock content %}
